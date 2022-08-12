@@ -1,0 +1,18 @@
+
+.slideIn {
+  position: relative;
+}
+
+.slideInPlay {
+  animation: slideInAnim .5s ease-out;
+}
+
+@keyframes slideInAnim {
+  from {
+    left: 75%;
+  }
+
+  to {
+    left: 0;
+  }
+}

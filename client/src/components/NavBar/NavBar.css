@@ -1,0 +1,14 @@
+.NavBar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FCC9C5
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 28px;
+  margin: 15px;
+  color: #ffffff;
+}
