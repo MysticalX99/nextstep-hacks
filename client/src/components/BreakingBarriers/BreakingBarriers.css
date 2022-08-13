@@ -3,8 +3,9 @@
 }
 
 .row {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 145px;
+  margin-left: 95px;
+  padding-bottom: 15px;
 }
 
 .container {
@@ -59,10 +60,6 @@
   }
 }
 
-#breaking-barriers {
-  padding: 100px 0;
-}
-
 .breaking-barriers-item {
   margin: 1px -15px 0 -14px;
   padding: 0;
@@ -115,42 +112,11 @@
   opacity: 1;
 }
 
-.section-title {
-  margin-bottom: 70px;
-}
-
-.section-title h2 {
-  position: relative;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  text-transform: uppercase;
-  font-size: 40px;
-}
-
-.section-title h2::after {
-  position: absolute;
-  content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
-  height: 4px;
-  width: 166px;
-  bottom: 0;
-  margin-left: -83px;
-  left: 50%;
-}
-
-.section-title p {
-  font-size: 18px;
-  color: gray;
-}
-
 .col-md-4,
 .col-lg-4,
 .col-sm-6 {
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 @media (min-width: 992px) {
@@ -175,11 +141,8 @@
 }
 
 .breaking-barriers-items {
-  /*display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;*/
   display: grid;
-  gap: 1px;
+  gap: 4px 4px;
   grid-template-columns: repeat(3, 1fr);
   width: -210px;
   margin: 0 auto;
@@ -188,6 +151,5 @@
 .breaking-barriers-items div {
   flex: 0 0 32%;
   height: 250px;
-  width: 400px;
-  margin-bottom: 5px;
+  width: 333.333333333px;
 }

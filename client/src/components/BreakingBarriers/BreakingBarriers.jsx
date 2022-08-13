@@ -1,4 +1,7 @@
+import { useState, useRef } from 'react'
 import Image from './Image/Image'
+import Popup from '../Popup/Popup'
+import Title from '../Title/Title'
 import './BreakingBarriers.css'
 
 import AutismLarge from '../../assets/images/autism-large.jpg'
@@ -20,6 +23,7 @@ import PTSDSmall from '../../assets/images/ptsd-small.jpg'
 import PsychosisLarge from '../../assets/images/psychosis-large.jpg'
 import PsychosisSmall from '../../assets/images/psychosis-small.jpg'
 
+// Fix images later
 const imageArray = [
   {
     title: "Autism",
@@ -69,21 +73,26 @@ const imageArray = [
 ];
 
 export default function BreakingBarriers() {
+  const [focusedImage, focusImage] = useState(null)
+  const popup = useRef()
+
+  const openImage = (image) => {
+    focusImage(image)
+    popup.current.show(true)
+  }
+
   return (
     <div id='breaking-barriers' className='text-center'>
+      <Popup ref={popup} outsideClick>
+        <img src={focusedImage ?? AutismLarge} alt="" width="500" height="375" />
+      </Popup>
       <div className='container'>
-        <div className='section-title'>
-          <h2>Gallery</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
-          </p>
-        </div>
+        <Title title='Breaking Barriers'>Breaking the stigma of social, mental and physical issues is more important than ever. Fighting misinformation is one way to help people who cannot do it themselves: your voice can help millions of people around the world. Ryan insert more filler text here pls.</Title>
         <div className='row'>
           <div className='breaking-barriers-items'>
             {imageArray
               ? imageArray.map((d, i) => (
-                <div key={`${d.title}-${i}`} className='col-sm-6 col-md-4 col-lg-4'>
+                <div key={`${d.title}-${i}`} className='col-sm-6 col-md-4 col-lg-4' onClickCapture={() => openImage(d.largeImage)}>
                   <Image title={d.title} largeImage={d.largeImage} smallImage={d.smallImage} />
                 </div>
               ))

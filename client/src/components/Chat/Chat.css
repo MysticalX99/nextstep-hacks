@@ -1,4 +1,3 @@
-
 .chat {
   margin: 0 auto;
   width: 75%;
@@ -48,7 +47,7 @@
   border: 1px solid black;
 }
 
-.chat-cancel {
+.chat-close {
   margin-top: 20px;
   font-size: 20px;
   cursor: pointer;

@@ -1,0 +1,20 @@
+.message-bubble {
+  position: relative;
+  background: #d4d4d4;
+  border: .4em;
+}
+
+.message-bubble:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 32px solid transparent;
+  border-right-color: #d4d4d4;
+  border-left: 0;
+  border-top: 0;
+  margin-top: 16px;
+  margin-left: 32px;
+}

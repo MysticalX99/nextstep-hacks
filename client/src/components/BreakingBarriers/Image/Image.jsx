@@ -5,9 +5,8 @@ export default function Image({ title, largeImage, smallImage }) {
     <div className='breaking-barriers-item'>
       <div className='hover-bg'>
         {' '}
-        <a
+        <span
           href={largeImage}
-          title={title}
         >
           <div className='hover-text'>
             <h4>{title}</h4>
@@ -17,7 +16,7 @@ export default function Image({ title, largeImage, smallImage }) {
             className='img-responsive'
             alt={title}
           />{' '}
-        </a>{' '}
+        </span>{' '}
       </div>
     </div>
   )

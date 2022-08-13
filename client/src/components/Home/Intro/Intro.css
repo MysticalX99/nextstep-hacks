@@ -5,13 +5,14 @@
 .title {
   text-align: center;
   font-weight: 300;
-  font-size: 95px;
+  font-size: 100px;
   margin: 15px;
   margin-top: 0;
+  margin-bottom: 50px;
   color: #ffffff;
 }
 
-.help{
+.help {
   margin-top: 20px;
   display: block;
   width: 30%;
@@ -27,6 +28,7 @@
   float: left;
   position: relative;
   left: -40px;
+  top: 25px;
 }
 
 .support {
