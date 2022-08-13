@@ -1,61 +1,71 @@
 .intro {
   background-color: #FEDDD8;
-}
-
-.title {
-  text-align: center;
-  font-weight: 300;
-  font-size: 100px;
-  margin: 15px;
-  margin-top: 0;
-  margin-bottom: 50px;
-  color: #ffffff;
-}
-
-.help {
-  margin-top: 20px;
-  display: block;
-  width: 30%;
-  float: left;
-  margin-left: 90px;
-  margin-right: 10px;
-}
-
-
-.sad {
-  display: block;
-  width: 30%;
-  float: left;
-  position: relative;
-  left: -40px;
-  top: 25px;
+  height: 150px;
 }
 
 .support {
   display: block;
-  width: 30%;
-  float: left;
+  width: 35%;
+  float: right;
   position: relative; 
-  top: -90px;
-  margin-left: 15px;
+  right: 100px;
 
 }
 
 .subheading {
-  text-align: center;
+  float: left;
   font-weight: 500;
   font-size: 45px;
   color: #ffffff;
   position: relative; 
-  top: -80px;
+  top: 125px;
+  left: 100px;
 }
 
-.images {
+.subheading > .informationalText {
+  color: #000000;
+  font-weight: 150;
+  font-size: 30px;
+  width: 900px;
+  position: relative; 
+  top: 30px;
+  margin-bottom: 60px;
+}
+
+.subheading > .sentenceTwo {
+  color: #000000;
+  font-weight: 150;
+  font-size: 30px;
+  width: 900px;
+  margin-bottom: 30px;
+}
+
+.subheading > .sentenceThree {
+  color: #000000;
+  font-weight: 150;
+  font-size: 30px;
+  width: 900px;
+  margin-bottom: 30px;
+}
+
+.subheading > .inline {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.images img {
-  flex: 1;
+.subheading > .inline > .inlineTitle {
+  color: #000000;
+  font-weight: 500;
+  font-size: 45px;
+  display: inline-block;
+  
+}
+
+.subheading > .inline > .sentenceFour {
+  color: #000000;
+  font-weight: 150;
+  font-size: 30px;
+  height: 100px;
+  margin-top: 15px;
+  margin-left: 10px;
+  
 }
