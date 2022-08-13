@@ -1,6 +1,7 @@
 import './LiveChat.css'
 import io from 'socket.io-client'
 import { useEffect, useRef } from 'react'
+import ChatBubble from './ChatBubble/ChatBubble'
 
 const socket = io()
 
@@ -27,6 +28,9 @@ export default function Chat() {
   return (
     <div className="live-chat">
       <h1>LIVE CHAT</h1>
+      <div>
+        <ChatBubble isAuthor={true}>fkosdkopfdskopfkopdsfkopds</ChatBubble>
+      </div>
       <form onSubmit={sendMessage}>
         <input ref={inputRef} />    
       </form>

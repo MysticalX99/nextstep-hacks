@@ -49,3 +49,13 @@
   position: relative; 
   top: -80px;
 }
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.images img {
+  flex: 1;
+}

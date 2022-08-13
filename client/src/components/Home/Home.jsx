@@ -8,6 +8,7 @@ export default function Home() {
     <div className="home">
       <Animated>
         <Intro />
+        <HomeSelection />
       </Animated>
     </div>
   )

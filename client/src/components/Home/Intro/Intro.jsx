@@ -9,9 +9,7 @@ export default function Intro() {
     <div className="intro">
       <Title title="Test" />
       <div className="images">
-        <img src={help} alt="" className="help"/>
         <img src={support} alt="" className="support"/>
-        <img src={sad} alt="" className="sad"/>
       </div>
       <div style={{ clear: 'both' }}></div>
       <div className="subheading">
