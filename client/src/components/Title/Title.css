@@ -12,7 +12,7 @@
 .section-title h1::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: #2BBBAD;
   height: 4px;
   width: 100%;
   bottom: 0;
@@ -21,6 +21,6 @@
 
 .section-title p {
   font-size: 24px;
-  color: gray;
+  color: grey;
+  text-align: left;
 }
-

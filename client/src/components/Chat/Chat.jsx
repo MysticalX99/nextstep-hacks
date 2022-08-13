@@ -4,13 +4,15 @@ import ChatButton from './ChatButton/ChatButton'
 import Title from '../Title/Title'
 import Popup from '../Popup/Popup'
 import searching from '../../assets/loading.gif'
+import { useNavigate } from 'react-router-dom'
+import issues from '../../assets/issues.json'
 
-export default function Chat() {
-  const ready = useRef(false)
+export default function Chat({ socket, chatData }) {
   const states = useRef([])
   const descRef = useRef()
   const popupRef = useRef()
   const errorRef = useRef()
+  const navigate = useNavigate()
 
   const getStates = () => (
     states.current.map((button) => button.getState())
@@ -26,6 +28,31 @@ export default function Chat() {
     }
 
     popupRef.current.show(true)
+    socket.emit('queue', states, desc)
+  };
+
+  useEffect(() => {
+    if(chatData.current) {
+      navigate('/live-chat')
+      return
+    }
+
+    socket.on('chat join', (otherStates, otherDesc) => {
+      chatData.current = {
+        states: getStates().map((v, i) => v && otherStates[i]),
+        desc: otherDesc,
+      }
+      navigate('/live-chat')
+    })
+
+    return () => {
+      socket.off('chat join')
+    }
+  }, [])
+
+  const unqueue = () => {
+    popupRef.current.show(false)
+    socket.emit('unqueue')
   };
 
   return (
@@ -34,7 +61,7 @@ export default function Chat() {
 
       <div className="chat-buttons">
         {
-          Array(10).fill('...').map((content, i) => {
+          issues.map((content, i) => {
             return <ChatButton key={i} ref={el => states.current[i] = el}>{content}</ChatButton>
           })
         }
@@ -42,20 +69,20 @@ export default function Chat() {
       <div className="chat-submit">
         <textarea ref={descRef} placeholder="Description (optional)"></textarea>
         <br />
-        <button type="button" className="chat-start" onClick={startChatting}>Start Chatting</button>
+        <button type="button" className="chat-start waves-effect waves-light btn-large" onClick={startChatting}>Start Chatting</button>
       </div>
       <Popup ref={popupRef} width="300px" height="300px">
         <div>
           <img src={searching} alt="" width="200" height="200" />
         </div>
         <div>
-          <button className="chat-close" type="button" onClick={() => popupRef.current.show(false)}>Cancel</button>
+          <button className="chat-close waves-effect waves-light btn" type="button" onClick={unqueue}>Cancel</button>
         </div>
       </Popup>
       <Popup ref={errorRef} outsideClick>
-        <div style={{ color: 'red', fontSize: '24px' }}>Please select at least one issue.</div>
+        <div style={{ fontSize: '24px' }}>Please select at least one issue.</div>
         <div>
-          <button className="chat-close" type="button" onClick={() => errorRef.current.show(false)}>OK</button>
+          <button className="chat-close waves-effect waves-light btn" type="button" onClick={() => errorRef.current.show(false)}>OK</button>
         </div>
       </Popup>
     </div>

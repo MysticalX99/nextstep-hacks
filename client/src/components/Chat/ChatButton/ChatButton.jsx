@@ -19,7 +19,7 @@ export default class ChatButton extends Component {
       const activeClass = active ? 'chat-button-active' : ''
 
       return (
-        <button className={`chat-button ${activeClass}`} onClick={() => this.setState({ active: !active })}>{children}</button>
+        <button className={`chat-button ${activeClass}`} onMouseDown={() => this.setState({ active: !active })}>{children}</button>
       )
     }
 }

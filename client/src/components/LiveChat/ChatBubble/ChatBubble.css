@@ -1,43 +1,36 @@
-.chat-bubble-receive {
+.chat-bubble {
+  background-color: #dbf1ff;
+  font-size: 20px;
   position: relative;
-  background: #d4d4d4;
-  border: .4em;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  min-width: 50px;
+  max-width: 300px;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-.chat-bubble-receive:after {
-  content: '';
+.chat-bubble::before {
+  z-index: -1;
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #dbf1ff;
   position: absolute;
-  left: 0;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: 32px solid transparent;
-  border-right-color: #d4d4d4;
-  border-left: 0;
-  border-top: 0;
-  margin-top: 16px;
-  margin-left: 32px;
+  bottom: -10px;
+  left: 5px;
 }
 
-.chat-bubble-send {
-	position: relative;
-	background: #62c355;
-	border-radius: .4em;
-  width: fit-content;
-  padding: 3px 3px 3px 3px;
+.chat-bubble-receive {
+  background-color: #f2f6f9;
 }
 
-.chat-bubble-send:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 32px solid transparent;
-	border-left-color: #62c355;
-	border-right: 0;
-	border-top: 0;
-	margin-top: -16px;
-	margin-right: -32px;
+.chat-bubble-receive::before {
+  left: initial;
+  right: 5px;
+  border-top: 20px solid #f2f6f9;
 }
