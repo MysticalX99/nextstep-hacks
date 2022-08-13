@@ -1,49 +1,50 @@
 import './Chat.css'
-import io from 'socket.io-client'
 import { useEffect, useRef } from 'react'
-
-const socket = io()
+import ChatButton from './ChatButton/ChatButton'
+import Popup from '../Popup/Popup'
+import searching from '../../assets/loading.gif'
 
 export default function Chat() {
   const ready = useRef(false)
+  const states = useRef([])
+  const descRef = useRef()
+  const popupRef = useRef()
 
-  useEffect(() => {
-    socket.on('connect', () => {
-      ready.current = true
-    });
+  const getStates = () => (
+    states.current.map((button) => button.getState())
+  )
 
-    return () => {
-      socket.off('connect')
-    };
-  }, []);
+  const startChatting = () => {
+    const states = getStates()
+    const desc = descRef.current.value.trim()
+
+    popupRef.current.show(true)
+  };
 
   return (
     <div className="chat">
       <h1>CHAT</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Morbi tristique senectus et netus. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Integer malesuada nunc vel risus. Volutpat est velit egestas dui id ornare arcu. Aliquet sagittis id consectetur purus ut. Nunc sed velit dignissim sodales ut eu. Quam id leo in vitae turpis massa sed elementum tempus. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Quam vulputate dignissim suspendisse in est ante.</p>
       <div className="chat-buttons">
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
-        <button>...</button>
+        {
+          Array(10).fill('...').map((content, i) => {
+            return <ChatButton key={i} ref={el => states.current[i] = el}>{content}</ChatButton>
+          })
+        }
       </div>
+      <div className="chat-submit">
+        <textarea ref={descRef}></textarea>
+        <br />
+        <button type="button" className="chat-start" onClick={startChatting}>Start Chatting</button>
+      </div>
+      <Popup ref={popupRef}>
+        <div>
+          <img src={searching} alt="" width="200" height="200" />
+        </div>
+        <div>
+          <button className="chat-cancel" type="button" onClick={() => popupRef.current.show(false)}>Cancel</button>
+        </div>
+      </Popup>
     </div>
   )
 }

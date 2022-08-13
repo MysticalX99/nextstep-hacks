@@ -1,8 +1,8 @@
 import './Image.css'
 
 export default function Image({ title, largeImage, smallImage }) {
-  return(
-    <div className='image-item'>
+  return (
+    <div className='breaking-barriers-item'>
       <div className='hover-bg'>
         {' '}
         <a
@@ -13,8 +13,8 @@ export default function Image({ title, largeImage, smallImage }) {
             <h4>{title}</h4>
           </div>
           <img
-            src={`${process.env.PUBLIC_URL}/${smallImage}`}
-            className='image-responsive'
+            src={smallImage}
+            className='img-responsive'
             alt={title}
           />{' '}
         </a>{' '}

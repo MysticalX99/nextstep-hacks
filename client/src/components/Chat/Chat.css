@@ -1,6 +1,6 @@
 
 .chat {
-  margin: 50px auto;
+  margin: 0 auto;
   width: 75%;
 }
 
@@ -9,6 +9,7 @@
 }
 
 .chat-buttons {
+  margin-top: 30px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -19,8 +20,36 @@
   flex: 1;
   min-width: 100px;
   max-width: 200px;
-  padding: 10px;
-  
-  
 }
 
+.chat-submit {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.chat-submit textarea {
+  resize: none;
+  height: 100px;
+  width: 75%;
+  max-width: 550px;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.chat-start {
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #CFE3E2;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.chat-cancel {
+  margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
