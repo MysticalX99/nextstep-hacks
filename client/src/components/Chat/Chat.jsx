@@ -48,7 +48,7 @@ export default function Chat({ socket, chatData }) {
     return () => {
       socket.off('chat join')
     }
-  }, [])
+  }, [chatData, navigate, socket])
 
   const unqueue = () => {
     popupRef.current.show(false)
@@ -57,7 +57,14 @@ export default function Chat({ socket, chatData }) {
 
   return (
     <div className="chat">
-      <Title title="chat">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Morbi tristique senectus et netus. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Integer malesuada nunc vel risus. Volutpat est velit egestas dui id ornare arcu. Aliquet sagittis id consectetur purus ut. Nunc sed velit dignissim sodales ut eu. Quam id leo in vitae turpis massa sed elementum tempus. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Quam vulputate dignissim suspendisse in est ante.</Title>
+      <Title title="chat">A helpful support group <b>empowers</b> its members to take good care of themselves by providing good-quality and reliable information. The knowledge that's shared can help members better manage their problems, learn about other social / mental / physical issues, and seek treatment or other support systems.<br /><br />Breaking the <b>barriers</b> starts with you making the personal choice to try to improve yourself or help others around you.<br /><br /><b>HOW TO (EMPOWER YOURSELF / OTHERS):</b>
+      <ol>
+        <li>Click one or more buttons below to be matched with someone similar to you.</li>
+        <li>Provide a short description (OPTIONAL) about yourself / what you might be going through to facilitate conversations.</li>
+        <li>Click the green button to start chatting!</li>
+        <li>Remember to be nice and supportive, you never know what someone might be going through.</li>
+      </ol>
+      </Title>
 
       <div className="chat-buttons">
         {

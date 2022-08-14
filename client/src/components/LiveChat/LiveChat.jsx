@@ -96,8 +96,8 @@ export default function Chat({ socket, chatData }) {
       <Popup ref={popupRef} outsideClick>
       Are you sure you want to disconnect?
       <div>
-        <button className="chat-close waves-effect waves-light btn" type="button" onClick={() => popupRef.current.show(false)} style={{ marginRight: 10, backgroundColor: '#EE6E73' }}>CANCEL</button>
-        <button className="chat-close waves-effect waves-light btn" type="button" onClick={disconnect}>YES</button>
+        <button className="chat-close waves-effect waves-light btn" type="button" onClick={() => popupRef.current.show(false)} style={{ marginRight: 10, backgroundColor: '#EE6E73', width: 108 }}>CANCEL</button>
+        <button className="chat-close waves-effect waves-light btn" type="button" onClick={disconnect} style={{ width: 108 }}>YES</button>
       </div>
       </Popup>
     </div>

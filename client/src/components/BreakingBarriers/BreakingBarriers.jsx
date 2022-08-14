@@ -62,73 +62,73 @@ const imageArray = [
     title: "Racism",
     largeImage: RacismLarge,
     smallImage: RacismSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://www.apa.org/topics/racism-bias-discrimination",
+    link2: "https://twitter.com/AntiRacismDay",
+    link3: "https://secure3.convio.net/blmca/site/Donation2?&df_id=1520&1520.donation=form1&mfc_pref=T&FR_ID=1060&PROXY_ID=1060&PROXY_TYPE=21"
   },
   {
     title: "Sexism",
     largeImage: SexismLarge,
     smallImage: SexismSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://eige.europa.eu/publications/sexism-at-work-handbook/part-1-understand/what-sexism",
+    link2: "https://twitter.com/equalitynow/",
+    link3: "https://www.equalitynow.org/donate/"
   },
   {
     title: "Ableism",
     largeImage: AbleismLarge,
     smallImage: AbleismSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://www.accessliving.org/newsroom/blog/ableism-101/",
+    link2: "https://twitter.com/InclusionCA",
+    link3: "https://www.accessliving.org/donate/"
   },
   {
     title: "Obesity",
     largeImage: ObesityLarge,
     smallImage: ObesitySmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://www.who.int/health-topics/obesity",
+    link2: "https://twitter.com/obesitycan",
+    link3: "https://obesitycanada.ca/donate/"
   },
   {
     title: "Addiction",
     largeImage: AddictionLarge,
     smallImage: AddictionSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://www.healthline.com/health/addiction",
+    link2: "https://twitter.com/actionaddiction",
+    link3: "https://steps2recovery.org.uk/donate/"
   },
   {
     title: "HIV/AIDS",
     largeImage: HIVAIDSLarge,
     smallImage: HIVAIDSSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://www.mayoclinic.org/diseases-conditions/hiv-aids/symptoms-causes/syc-20373524",
+    link2: "https://twitter.com/unicef_aids",
+    link3: "https://donate.eltonjohnaidsfoundation.org/"
   },
   {
     title: "PTSD",
     largeImage: PTSDLarge,
     smallImage: PTSDSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://psychiatry.org/patients-families/ptsd/what-is-ptsd",
+    link2: "https://twitter.com/WoundWarriorCA",
+    link3: "https://woundedwarriors.ca/donate/"
   },
   {
     title: "Ageism",
     largeImage: AgeismLarge,
     smallImage: AgeismSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://www.who.int/news-room/questions-and-answers/item/ageing-ageism",
+    link2: "https://twitter.com/Age_Int",
+    link3: "https://www.ageinternational.org.uk/donation/donate"
   },
   {
     title: "STDs",
     largeImage: STDLarge,
     smallImage: STDSmall,
-    link1: "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
-    link2: "https://twitter.com/AutismCanada",
-    link3: "https://www.autismspeaks.ca/donate/"
+    link1: "https://kidshealth.org/en/teens/std.html",
+    link2: "https://twitter.com/CDCSTD",
+    link3: "https://www.hasslefreeclinic.org/donate"
   }
 ];
 
@@ -152,7 +152,14 @@ export default function BreakingBarriers() {
         </div>
       </Popup>
       <div className='container'>
-        <Title title='Breaking Barriers'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Morbi tristique senectus et netus. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Integer malesuada nunc vel risus. Volutpat est velit egestas dui id ornare arcu. Aliquet sagittis id consectetur purus ut. Nunc sed velit dignissim sodales ut eu. Quam id leo in vitae turpis massa sed elementum tempus. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Quam vulputate dignissim suspendisse in est ante.</Title>
+        <Title title='Breaking Barriers'><b>Stigma</b> often comes from lack of understanding or fear. Inaccurate or misleading media representations of various illnesses contribute to both those factors. No single person or group of people are more likely than others to suffer from a disability or face a social, mental or physical issue.<br /><br />Stigma hurts everyone by creating <b>barriers</b> (more fear or anger toward ordinary people) instead of focusing on the disease that is causing the problem. Barriers can also make people more likely to hide symptoms or illness, keep them from seeking health care immediately, and prevent individuals from adopting healthy behaviors.<br /><br /><b>HOW TO (BREAK THE BARRIERS):</b>
+          <ol>
+            <li>Click on a topic that interests you.</li>
+            <li>Click on the buttons in the popup to learn more about the social, mental and physical issues people face.</li>
+            <li>Donate (OPTIONAL) to a charity that helps fight the barriers we put up against others.</li>
+            <li>Do your own research!</li>
+          </ol>
+        </Title>
         <div className='row'>
           <div className='breaking-barriers-items'>
             {imageArray

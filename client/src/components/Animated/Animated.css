@@ -7,6 +7,10 @@
   animation: slideInAnim .5s ease-out;
 }
 
+.slideInPlayR {
+  animation: slideInAnimR .5s ease-out;
+}
+
 @keyframes slideInAnim {
   from {
     left: 75%;
@@ -14,5 +18,15 @@
 
   to {
     left: 0;
+  }
+}
+
+@keyframes slideInAnimR {
+  from {
+    right: 75%;
+  }
+
+  to {
+    right: 0;
   }
 }

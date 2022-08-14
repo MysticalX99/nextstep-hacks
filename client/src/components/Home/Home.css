@@ -1,7 +1,7 @@
 
 .home {
     position: relative;
-    height: 100vh;
+    height: 100%;
     text-align: center;
 }
 
@@ -18,10 +18,9 @@
 
 .home {
     color: white;
-    padding-top: 30px;
 }
 
-.home h1 {
+.home h1, .home h2 {
     margin: 0;
     font-weight: bold;
 }
