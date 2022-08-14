@@ -1,11 +1,14 @@
 import './LiveChat.css'
 import { useEffect, useRef, useState } from 'react'
 import ChatBubble from './ChatBubble/ChatBubble'
+import Title from '../Title/Title'
 import { useNavigate } from 'react-router-dom'
 import issues from '../../assets/issues.json'
+import Popup from '../Popup/Popup'
 
 export default function Chat({ socket, chatData }) {
   const inputRef = useRef()
+  const popupRef = useRef()
   const navigate = useNavigate()
   const [messages, setMessages] = useState(chatData.current?.cache ?? [])
   const [status, setStatus] = useState('')
@@ -31,7 +34,7 @@ export default function Chat({ socket, chatData }) {
       socket.off('chat msg')
       socket.off('chat leave')
     }
-  }, [messages])
+  }, [chatData, socket, messages])
 
   const sendMessage = (e) => {
     e.preventDefault()
@@ -43,15 +46,29 @@ export default function Chat({ socket, chatData }) {
     window.scrollTo(window.scrollX, document.body.scrollHeight)
   }
 
+  const disconnect = () => {
+    chatData.current = null
+    socket.emit('leave')
+    navigate('/chat')
+  }
+
   return (
     <div className="live-chat">
-      <h1>LIVE CHAT</h1>
+      <Title title="LIVE CHAT" />
       <h2 className="live-chat-status">{status}</h2>
       {
         chatData.current &&
         <div className="live-chat-info">
-          <p><b>Description:</b> {chatData.current.desc}</p>
-          <p><b>You have the following issues in common:</b> {chatData.current.states.map((v, i) => v && issues[i]).filter(v => v).join(', ')}</p>
+          <b>You have the following things in common:</b>
+          <p>{chatData.current.states.map((v, i) => v && issues[i]).filter(v => v).join(', ')}</p>
+          {
+            chatData.current.desc && 
+            <>
+              <b>Description:</b>
+              <p>{chatData.current.desc}</p>
+            </>
+          }
+          <hr />
         </div>
       }
       <div className="chat-bubbles">
@@ -61,19 +78,28 @@ export default function Chat({ socket, chatData }) {
           })
         }
       </div>
+      <div style={{ textAlign: 'center' }}>
+        <button className="chat-close waves-effect waves-light btn" type="button" onClick={() => popupRef.current.show(true)}>Disconnect</button>
+      </div>
       <div className="live-chat-input">
         <div className='container'>
           <form onSubmit={sendMessage}>
-            <div class="input-group">
-              <label class="input-filled">
-                <input required ref={inputRef} className="live-chat-input" />
-                <span class="input-label">Send a message</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle cx="15.5" cy="9.5" r="1.5"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-5-6c.78 2.34 2.72 4 5 4s4.22-1.66 5-4H7z"/></svg>
+            <div className="input-group">
+              <label className="input-filled">
+                <input ref={inputRef} className="live-chat-input" />
+                <span className="input-label">Send a message</span>
               </label>
             </div>
           </form>
         </div>
       </div>
+      <Popup ref={popupRef} outsideClick>
+      Are you sure you want to disconnect?
+      <div>
+        <button className="chat-close waves-effect waves-light btn" type="button" onClick={() => popupRef.current.show(false)} style={{ marginRight: 10, backgroundColor: '#EE6E73' }}>CANCEL</button>
+        <button className="chat-close waves-effect waves-light btn" type="button" onClick={disconnect}>YES</button>
+      </div>
+      </Popup>
     </div>
   )
 }

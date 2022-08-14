@@ -27,10 +27,5 @@
 }
 
 .activeLink {
-  color: #EE6E73;
   font-weight: bold;
-}
-
-.activeLink::before {
-  background: #EE6E73;
 }

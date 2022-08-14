@@ -10,10 +10,6 @@ const io = require('socket.io')(server, {
     },
 })
 
-app.get('/', (req, res) => {
-    res.send('test');
-});
-
 function enqueue(client) {
     const sockets = io.sockets.adapter.rooms.get('queue');
     if(!sockets)
@@ -59,13 +55,16 @@ io.on('connection', (socket) => {
         socket.data.chattingWith.emit('chat msg', msg);
     });
 
-    socket.on('disconnect', () => {
+    const onLeave = () => {
         const other = socket.data.chattingWith;
         if(other) {
             delete other.data.chattingWith;
             other.emit('chat leave');
         }
-    });
+    };
+
+    socket.on('disconnect', onLeave);
+    socket.on('leave', onLeave);
 });
 
 server.listen(PORT);

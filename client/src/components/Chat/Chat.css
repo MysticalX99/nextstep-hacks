@@ -29,13 +29,30 @@
 
 .chat-submit textarea {
   resize: none;
-  height: 100px;
+  height: 125px;
   width: 75%;
   max-width: 550px;
   font-family: Arial;
-  font-size: 16px;
-  padding: 5px;
-  background-color: white;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #FEDDD8;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.chat-submit textarea::placeholder {
+  color: #808080;
+}
+
+.chat-submit textarea::-ms-input-placeholder {
+  color: #808080;
+}
+
+@media only screen and (max-width: 1000px) {
+  .chat-submit textarea {
+    width: 100%;
+  }
 }
 
 .chat-close {

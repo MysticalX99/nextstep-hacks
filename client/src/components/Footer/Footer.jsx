@@ -15,16 +15,15 @@ export default function Footer() {
           <div className="col l4 offset-l2 s12">
             <h5 className="white-text">Links</h5>
             <ul>
-              <li><a className="grey-text text-lighten-3" href="https://github.com/MysticalX99/nextstep-hacks" target='_blank'>Source Code <img src={Github} style={{width: 24, height: 24, marginLeft: 10}}></img></a></li>
-              <li><a className="grey-text text-lighten-3" href="https://devpost.com/software/healic" target='_blank'>Devpost <img src={Devpost} style={{width: 32, height: 32, marginLeft: 10}}></img></a></li>
+              <li><a className="grey-text text-lighten-3" href="https://github.com/MysticalX99/nextstep-hacks" target='_blank' rel="noreferrer"><img src={Github} alt='' style={{width: 24, height: 24, marginRight: 10, marginBottom: 4}}></img> Source Code</a></li>
+              <li><a className="grey-text text-lighten-3" href="https://devpost.com/software/healic" target='_blank' rel="noreferrer"><img src={Devpost} alt='' style={{width: 32, height: 32, marginRight: 5, marginLeft: -3}}></img> Devpost</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container">
+        <div className="container" style={{textAlign: 'center'}}>
         © 2022 Danyal, Ryan, Tim
-        <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
       </div>
     </footer>
